@@ -3,5 +3,6 @@ exec { 'update':
 }
 
 node 'schooltool.loc'{
+  class { 'nginx': } ->
   class { 'schooltool':}
 }
