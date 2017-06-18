@@ -21,4 +21,14 @@ class schooltool {
     require => Package['schooltool'],
     notify  => Service['schooltool'],
   }
+
+  file { '/etc/schooltool/standard/schooltool.conf':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/schooltool/schooltool.conf',
+    require => Package['schooltool'],
+    notify  => Service['schooltool']
+  }
 }
